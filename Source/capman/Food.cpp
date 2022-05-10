@@ -30,5 +30,14 @@ void AFood::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	Rotate(DeltaTime);
+
+}
+
+void AFood::Rotate(float DeltaTime) {
+	FRotator Rotation = GetActorRotation();
+	Rotation.Yaw += 45.f * DeltaTime;
+
+	SetActorRotation(Rotation);
 }
 
